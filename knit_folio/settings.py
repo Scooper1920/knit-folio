@@ -81,6 +81,9 @@ TEMPLATES = [
     },
 ]
 
+FILE_PATH_FIELD_DIRECTORY='/Users/macbook/desktop/momentum/homework/knit-folio/projects/static/img'
+
+
 WSGI_APPLICATION = 'knit_folio.wsgi.application'
 
 
