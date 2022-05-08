@@ -9,7 +9,7 @@ def list_projects(request):
                     {"projects":projects})
 
 def project_detail(request,pk):
-    album = Project.objects.get(pk=pk)
+    project = Project.objects.get(pk=pk)
     context = {
         'project':project
     }
@@ -28,7 +28,7 @@ def add_project(request):
 
 
 def edit_project(request, pk):
-    album = get_object_or_404(Project, pk=pk)
+    project = get_object_or_404(Project, pk=pk)
     if request.method == 'GET':
         form = ProjectForm(instance=project)
     else:
@@ -44,9 +44,9 @@ def edit_project(request, pk):
 
 
 def delete_project(request, pk):
-    album = get_object_or_404(Project, pk=pk)
+    project = get_object_or_404(Project, pk=pk)
     if request.method == 'POST':
-        album.delete()
+        project.delete()
         return redirect(to='list_projects')
 
     return render(request, "projects/delete_project.html",

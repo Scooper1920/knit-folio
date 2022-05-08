@@ -1,7 +1,9 @@
 {% extends "base.html" %}
 {% load static %}
-
 {% block content %}
+<div>
+    <header></header>
+</div>
 <h1>Every Stitch has a Story!</h1>
 <div class="row">
     <div class="col-md-8">
@@ -9,7 +11,8 @@
     </div>
     <div class="col-md-4">
         <h5>{{ project.title }}</h5>
-        <h5>Completed on: {{ project.dateDone }} </h5>
+        <h6>Started on: {{project.startDate}}</h6>
+        <h6>Completed on: {{ project.dateDone }} </h6>
         <p>{{project.description}}</p>
         <br>
     </div>
