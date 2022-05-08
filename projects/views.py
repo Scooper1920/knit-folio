@@ -1,6 +1,27 @@
+from re import U
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Project
-from .forms import ProjectForm
+from .forms import ProjectForm,CreateUserForm
+from django.contrib.auth.forms import UserCreationForm
+
+
+def register_page(request):
+    form = CreateUserForm()
+
+    if request.method =='POST':
+        form = CreateUserForm(request.POST)
+#above line is if the method is post then put data into the form
+#then validate form
+        if form.is_valid():
+            form.save()
+
+    context ={'form':form}
+    return render(request, 'projects/register_page.html',context)
+
+
+def login_page(request):
+    context={}
+    return render(request,'projects/login_page.html' )
 
 def list_projects(request):
     projects=Project.objects.all()

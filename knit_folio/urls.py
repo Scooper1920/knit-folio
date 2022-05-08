@@ -18,15 +18,21 @@ from django.urls import include, path
 from projects import views as projects_views
 from django.conf.urls.static import static 
 from django.conf import settings
+from projects import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
     path('__debug__/', include('debug_toolbar.urls')),
-    path("",projects_views.list_projects, name ='list_projects' ),
-    path('projects/<int:pk>',projects_views.project_detail, name='project_detail'),
-    path('projects/new',projects_views.add_project, name='add_project'),
-    path('projects/<int:pk>/edit',projects_views.edit_project, name='edit_project'),
-    path('projects/<int:pk>/delete',projects_views.delete_project, name='delete_project')
+
+    path('register/', views.register_page, name="register_page"),
+    path('login/', views.login_page, name="login_page"),
+
+   
+    path("",views.list_projects, name ='list_projects' ),
+    path('projects/<int:pk>',views.project_detail, name='project_detail'),
+    path('projects/new',views.add_project, name='add_project'),
+    path('projects/<int:pk>/edit',views.edit_project, name='edit_project'),
+    path('projects/<int:pk>/delete',views.delete_project, name='delete_project'),
 ]
 
 if settings.DEBUG:  # new
