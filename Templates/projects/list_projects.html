@@ -1,5 +1,38 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<h1>Projects</h1>
+<h1>Shawna's Most Lucious Knits of Luciousness</h1>
+<a href="{% url 'add_project' %}"
+class="btn btn-primary">
+ Add New
+</a>
+<div class="row">
+{% for project in projects %}
+    <div class="col-md-4">
+        <div class="card mb-2">
+            <img class="card-img-top" src="{{ project.image.url}}">
+            <div class="card-body">
+                <h5 class="card-title">{{ project.title }}</h5>
+                <a href="{{project.patternlnk}}">Link to Pattern</a>
+                <p class="card-text">Yarn Used: {{ project.yarn }}</p>
+                <p class="card-text">Meters:{{ project.meters }}</p>
+                <a href="{% url 'project_detail' project.pk %}"
+                class="btn btn-primary">
+                 Read More
+             </a>
+             <a href="{% url 'edit_project' project.pk %}"
+             class="btn btn-primary">
+              Edit
+          </a>
+
+       <a href="{% url 'delete_project' album.pk %}"
+       class="btn btn-primary">
+       Delete
+    </a>
+
+            </div>
+        </div>
+    </div>
+    {% endfor %}
+</div>
 {% endblock %}
