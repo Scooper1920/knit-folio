@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<h1>Alterations</h1>
+
+<div>
+  <form action="{% url 'edit_project' pk=project.pk %}" method="POST">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <div>
+      <button type="submit">Update Project!</button>
+      <a href="{% url 'list_projects' %}"><button type="submit">Nevermind!</button></a>
+    </div>
+  </form>
+</div>
+{% endblock %}

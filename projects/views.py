@@ -1,6 +1,6 @@
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Project
-# from .forms import ProjectForm
+from .forms import ProjectForm
 
 def list_projects(request):
     projects=Project.objects.all()
