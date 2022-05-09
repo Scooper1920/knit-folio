@@ -2,7 +2,6 @@ from re import U
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Project
 from .forms import ProjectForm,CreateUserForm
-from django.contrib.auth.forms import UserCreationForm
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
 

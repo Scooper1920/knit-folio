@@ -3,7 +3,7 @@
 <div>
     <header></header>
 </div>
-<h1>Delete Project</h1>
+<h1>Delete {{project.title}}</h1>
 
 <div>
   <form action="{% url 'delete_project' pk=project.pk %}" method="POST">
