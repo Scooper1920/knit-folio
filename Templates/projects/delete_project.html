@@ -8,10 +8,20 @@
 <div>
   <form action="{% url 'delete_project' pk=project.pk %}" method="POST">
     {% csrf_token %}
-    <p>Aww, really? Are we deleting {{ project.title }}?</p>
-    <div>
-      <button type="submit">Chuck it!</button><br />
-      <a href="{% url 'list_projects' %}">Keep it!</a>
+    <p>Say it ain't so! Are we really deleting {{ project.title }}?!</p>
+    
+        <div >
+            <div class="col-md-8">
+                <img src="{{ project.image.url }}" alt="" width="250">
+            </div>
+
+        <div>
+      <button type="submit">Yeet!</button>
+      <br />
+      </div>
+      <br/>
+      <div>
+      <button><a href="{% url 'list_projects' %}"></a>Keep!</button>
     </div>
   </form>
 </div>

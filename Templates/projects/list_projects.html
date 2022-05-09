@@ -2,9 +2,17 @@
 {% load static %}
 {% block content %}
 <div>
-<header><h3>Welcome,</h3></header>
+
+<header>
+    <span>
+    <h3>Hey there, {{request.user}}!</h3>
+    </span>
+    <span>
+        <a href="{% url 'log_out' %}">Peace Out!</a> 
+    </span>
+</header>
 </div>
-<h1>Shawna's Most Lucious Knits of Luciousness</h1>
+<h1>Welcome to Shawna's Knit-Folio!</h1>
 <a href="{% url 'add_project' %}"
 class="btn btn-primary">
  Add New
