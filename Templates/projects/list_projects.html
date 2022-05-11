@@ -1,22 +1,41 @@
 {% extends "base.html" %}
 {% load static %}
 {% block content %}
-<div>
 
+
+<style>
+    header {
+        display:flex;
+        justify-content: space-evenly;
+        align-items: center;
+        font-size: xx-large;
+        background-color: rgba(189, 109, 29, 0.596);
+
+    }
+    .body {
+        font-family: fantasy;
+        background-image:url(static/img/shutterstock_1776238052.jpg);
+        background-size: cover;
+    }
+</style>
+<body class="body">
+    
 <header>
-    <span>
-    <h3>Hey there, {{request.user}}!</h3>
-    </span>
-    <span>
-        <a href="{% url 'log_out' %}">Peace Out!</a> 
-    </span>
+
+<h2>Hey there, {{request.user}}!  Welcome to Shawna's Knit-Folio!</h2>
 </header>
+
+<div>
+<span>
+    <a href="{% url 'log_out' %}">Peace Out!</a> 
+</span>
 </div>
-<h1>Welcome to Shawna's Knit-Folio!</h1>
+<div>
 <a href="{% url 'add_project' %}"
 class="btn btn-primary">
  Add New
 </a>
+</div>
 <br/>
 <br/>
 <div class="row">
@@ -48,4 +67,5 @@ class="btn btn-primary">
     </div>
     {% endfor %}
 </div>
+</body>
 {% endblock %}

@@ -1,18 +1,28 @@
+.header {
+    height: 500px;
+}
+
 html body {
+
+    display: flex;
+    justify-content: center;
+    align-content: center;
     margin: 0;
     padding: 0;
     height: 100%;
     /* background: lightblue; */
-    background: url(../../img/unnamed.jpeg)
+    background: url(../img/background.jpg);
+    background-size: cover
 }
 
 .user_card {
     width: 350px;
     margin-top: auto;
     margin-bottom: auto;
-    background: #74cfbf;
+    background: #7d79699b;
     position: relative;
     display: flex;
+    align-items: center;
     justify-content: center;
     flex-direction: column;
     padding: 10px;
@@ -28,13 +38,13 @@ html body {
 }
 
 #form-title {
-    color: #fff;
+    color: rgb(215, 89, 89);
 
 }
 
 .login_btn {
     width: 100%;
-    background: #33ccff !important;
+    background:rgb(211, 94, 94) !important;
     color: white !important;
 }
 
@@ -48,7 +58,7 @@ html body {
 }
 
 .input-group-text {
-    background: #f7ba5b !important;
+    background: #c1831e !important;
     color: white !important;
     border: 0 !important;
     border-radius: 0.25rem 0 0 0.25rem !important;
