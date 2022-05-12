@@ -9,3 +9,7 @@ class Project(models.Model):
     dateStart= models.DateField(null=True, blank =True)
     dateDone = models.DateField(null=True, blank=True)
     description = models.TextField(null=True, blank=True)
+
+
+    def __str__(self):
+        return self.title
