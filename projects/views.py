@@ -1,12 +1,8 @@
-from re import U
 from django.shortcuts import render, redirect, get_object_or_404
 from .models import Project
 from .forms import ProjectForm,CreateUserForm
 from django.contrib.auth import authenticate, login,logout
 from django.contrib.auth.decorators import login_required
-
-
-
 from django.contrib import messages
 
 
@@ -80,20 +76,7 @@ def add_project(request):
     return render(request, "projects/add_project.html", {"form":form})
 
 
-def edit_project(request, pk):
-    project = get_object_or_404(Project, pk=pk)
-    if request.method == 'GET':
-        form = ProjectForm(instance=project)
-    else:
-        form = ProjectForm(data=request.POST, instance=project)
-        if form.is_valid():
-            form.save()
-            return redirect(to='list_projects')
 
-    return render(request, "projects/edit_project.html", {
-        "form": form,
-        "project": project
-    })
 
 
 def delete_project(request, pk):
